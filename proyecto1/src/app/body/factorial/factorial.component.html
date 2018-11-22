@@ -1,0 +1,16 @@
+<div class="card m-2" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">Factorial</h5>
+        <div class="form-group">
+          <label for="numero">Número</label>
+          <input type="number" class="form-control" id="numero" [(ngModel)]="numero" placeholder="Ingrese un número">
+          <small id="numero" class="form-text text-muted">Ingrese el número que desee</small>
+        </div>
+        <div class="alert alert-success" role="alert">
+          La respuesta es: {{respuesta}}
+        </div>
+        <div class="col-12 text-right">
+          <button type="button" class="btn btn-primary" (click)="calcular()">Calcular</button>
+        </div>
+    </div>
+  </div>
