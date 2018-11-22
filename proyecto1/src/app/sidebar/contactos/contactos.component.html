@@ -1,12 +1,12 @@
-<div class="card col-12">
+<div *ngFor="let contacto of contactos" class="card col-12 m-2">
   <div class="card-body">
     <div class="row">
       <div class="col-3">
-        <img src="https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.shareicon.net%2Fdata%2F2017%2F01%2F06%2F868320_people_512x512.png&f=1" style="width: 50px;"/>
+        <img src="{{contacto.Imagen}}" style="width: 50px;"/>
       </div>
       <div class="col-9">
-          <h5 class="card-title">NombreContacto</h5>
-          <p class="card-text">Estado</p>
+          <h5 class="card-title">{{contacto.NombreContacto}}</h5>
+          <p class="card-text">{{contacto.Estado}}</p>
       </div>
     </div>
   </div>

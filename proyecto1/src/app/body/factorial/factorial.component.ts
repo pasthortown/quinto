@@ -8,13 +8,15 @@ import { Component, OnInit } from '@angular/core';
 export class FactorialComponent implements OnInit {
   respuesta = 0;
   numero = 1;
+  mostrado = false;
   constructor() { }
 
   ngOnInit() {
   }
 
   calcular() {
-    this.respuesta=this.factorialRecursivo(this.numero);
+    this.mostrado = true;
+    this.respuesta = this.factorialRecursivo(this.numero);
   }
 
   factorialRecursivo(numero: number) {

@@ -6,7 +6,7 @@
           <input type="number" class="form-control" id="numero" [(ngModel)]="numero" placeholder="Ingrese un número">
           <small id="numero" class="form-text text-muted">Ingrese el número que desee</small>
         </div>
-        <div class="alert alert-success" role="alert">
+        <div *ngIf="mostrado" class="alert alert-success" role="alert">
           La respuesta es: {{respuesta}}
         </div>
         <div class="col-12 text-right">

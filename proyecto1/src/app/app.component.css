@@ -3,3 +3,16 @@
   height: 25px;
   bottom: 0;
 }
+
+.cabeza{
+  position: fixed;
+  top:0;
+  height: 25px;
+}
+
+.cuerpo{
+  width: 100%;
+  float:left;
+  position: fixed;
+  top:60px;
+}
