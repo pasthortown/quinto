@@ -30,7 +30,7 @@
                   <td>Edinburgh</td>
                   <td>
                     <div class="btn-group" role="group" aria-label="Basic example">
-                      <button type="button" class="btn btn-warning">
+                      <button type="button" (click)="open(content)" class="btn btn-warning">
                           <span class="fa fa-edit"></span>
                       </button>
                       <button type="button" class="btn btn-danger">
@@ -44,3 +44,16 @@
         </div>
     </div>
 </div>
+
+
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+
+    </div>
+    <div class="modal-body">
+
+    </div>
+    <div class="modal-footer">
+
+    </div>
+</ng-template>
