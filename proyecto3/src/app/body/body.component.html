@@ -67,7 +67,7 @@
                 <select>
                     <optgroup label="Géneros">
                         <option value="0">Seleccione un Género...</option>
-                        <option value="dedicated_corei3_hp">Masculino</option>
+                        <option *ngFor="let genero of generos" value="{{genero.id}}">{{genero.descripcion}}</option>
                     </optgroup>
                 </select>
             </div>
