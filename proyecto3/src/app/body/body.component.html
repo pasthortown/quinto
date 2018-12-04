@@ -7,8 +7,11 @@
           <button type="button" (click)="getPersonas()" class="btn btn-info">
             <span class="fa fa-sync"></span>
           </button>
-          <button type="button" (click)="open(content)" class="btn btn-primary">
+          <button type="button" (click)="open(content, 'nuevo')" class="btn btn-primary">
               <span class="fa fa-file"></span>
+          </button>
+          <button type="button" (click)="obtenerHora()" class="btn btn-success">
+              <span class="fa fa-clock"></span>
           </button>
         </div>
         <div class="col-12 mt-2">
@@ -22,19 +25,19 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let persona of personas">
+              <tr *ngFor="let persona of personas" (click)="seleccionar(persona)">
                   <td>
-                    <span class="fa fa-hand-point-right"></span>
+                    <span class="fa fa-hand-point-right" [hidden]="!estaSeleccionado(persona)"></span>
                   </td>
                   <td>{{persona.identificacion}}</td>
                   <td>{{persona.apellido1}} {{persona.apellido2}} {{persona.nombre1}} {{persona.nombre2}}</td>
                   <td>
                     <div class="btn-group" role="group" aria-label="Basic example">
-                      <button type="button" (click)="open(content)" class="btn btn-warning">
+                      <button type="button" (click)="open(content, 'edit')" class="btn btn-warning">
                           <span class="fa fa-edit"></span>
                       </button>
                       <button type="button" class="btn btn-danger">
-                          <span class="fa fa-trash-alt"></span>
+                          <span class="fa fa-trash-alt" (click)="deletePersona(persona)"></span>
                       </button>
                     </div>
                   </td>
@@ -57,8 +60,9 @@
       <div class="row">
         <div class="col-4"></div>
         <div class="col-4">
-            <img src="https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Ficons.iconarchive.com%2Ficons%2Fpaomedia%2Fsmall-n-flat%2F1024%2Fuser-male-icon.png&f=1" class="rounded-circle col-12" style="border-width: 1px; border-style: solid; border-color: black;">
-
+            <input [hidden]="true" type="file" id="foto" #fileInput
+            (change)="CodificarArchivo($event)" accept="image/*">
+            <img (click)="fileInput.click()" src="{{fotoPersonaModal.mostrar}}" class="rounded-circle col-12">
             <input type="text" data-role="materialinput"
                 data-label="Identificación"
                 placeholder="Identificación" [(ngModel)]="personaModal.identificacion">
