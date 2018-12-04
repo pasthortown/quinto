@@ -4,10 +4,10 @@
     </div>
     <div class="h-100 p-4">
         <div class="btn-group" role="group" aria-label="Basic example">
-          <button type="button" class="btn btn-info">
+          <button type="button" (click)="getPersonas()" class="btn btn-info">
             <span class="fa fa-sync"></span>
           </button>
-          <button type="button" class="btn btn-primary">
+          <button type="button" (click)="open(content)" class="btn btn-primary">
               <span class="fa fa-file"></span>
           </button>
         </div>
@@ -22,12 +22,12 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <tr *ngFor="let persona of personas">
                   <td>
                     <span class="fa fa-hand-point-right"></span>
                   </td>
-                  <td>Tiger Nixon</td>
-                  <td>Edinburgh</td>
+                  <td>{{persona.identificacion}}</td>
+                  <td>{{persona.apellido1}} {{persona.apellido2}} {{persona.nombre1}} {{persona.nombre2}}</td>
                   <td>
                     <div class="btn-group" role="group" aria-label="Basic example">
                       <button type="button" (click)="open(content)" class="btn btn-warning">
@@ -61,10 +61,10 @@
 
             <input type="text" data-role="materialinput"
                 data-label="Identificación"
-                placeholder="Identificación">
+                placeholder="Identificación" [(ngModel)]="personaModal.identificacion">
 
             <div class="col-12">
-                <select>
+                <select [(ngModel)]="personaModal.idGenero">
                     <optgroup label="Géneros">
                         <option value="0">Seleccione un Género...</option>
                         <option *ngFor="let genero of generos" value="{{genero.id}}">{{genero.descripcion}}</option>
@@ -80,46 +80,46 @@
         <div class="col-3">
             <input type="text" data-role="materialinput"
                 data-label="Primer Nombre"
-                placeholder="Primer Nombre">
+                placeholder="Primer Nombre" [(ngModel)]="personaModal.nombre1">
         </div>
         <div class="col-3">
             <input type="text" data-role="materialinput"
                 data-label="Segundo Nombre"
-                placeholder="Segundo Nombre">
+                placeholder="Segundo Nombre" [(ngModel)]="personaModal.nombre2">
         </div>
         <div class="col-3">
             <input type="text" data-role="materialinput"
                 data-label="Primer Apellido"
-                placeholder="Primer Apellido">
+                placeholder="Primer Apellido" [(ngModel)]="personaModal.apellido1">
         </div>
         <div class="col-3">
             <input type="text" data-role="materialinput"
                 data-label="Segundo Apellido"
-                placeholder="Segundo Apellido">
+                placeholder="Segundo Apellido" [(ngModel)]="personaModal.apellido2">
         </div>
       </div>
       <div class="row">
         <div class="col-6">
             <input type="text" data-role="materialinput"
                 data-label="Teléfono Celular"
-                placeholder="Teléfono Celular">
+                placeholder="Teléfono Celular" [(ngModel)]="personaModal.telefonoCelular">
         </div>
         <div class="col-6">
             <input type="text" data-role="materialinput"
                 data-label="Teléfono Domicilio"
-                placeholder="Teléfono Domicilio">
+                placeholder="Teléfono Domicilio" [(ngModel)]="personaModal.telefonoDomicilio">
         </div>
       </div>
       <div class="row">
         <div class="col-12">
             <input type="email" data-role="materialinput"
                 data-label="Correo Electrónico"
-                placeholder="Correo Electrónico">
+                placeholder="Correo Electrónico" [(ngModel)]="personaModal.correoElectronicoInstitucional">
         </div>
       </div>
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-outline-danger" (click)="c('cancel')">Cancelar</button>
-        <button type="button" class="btn btn-success" (click)="c('Ok click')">Aceptar</button>
+        <button type="button" class="btn btn-success" (click)="c('ok')">Aceptar</button>
     </div>
 </ng-template>
