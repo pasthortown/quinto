@@ -48,12 +48,78 @@
 
 <ng-template #content let-c="close" let-d="dismiss">
     <div class="modal-header">
-
+      Contacto:
+      <button type="button" class="close" (click)="d('Cross click')">
+          <span>&times;</span>
+      </button>
     </div>
     <div class="modal-body">
+      <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <img src="https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Ficons.iconarchive.com%2Ficons%2Fpaomedia%2Fsmall-n-flat%2F1024%2Fuser-male-icon.png&f=1" class="rounded-circle col-12" style="border-width: 1px; border-style: solid; border-color: black;">
 
+            <input type="text" data-role="materialinput"
+                data-label="Identificación"
+                placeholder="Identificación">
+
+            <div class="col-12">
+                <select>
+                    <optgroup label="Géneros">
+                        <option value="0">Seleccione un Género...</option>
+                        <option value="dedicated_corei3_hp">Masculino</option>
+                    </optgroup>
+                </select>
+            </div>
+        </div>
+        <div class="col-4">
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3">
+            <input type="text" data-role="materialinput"
+                data-label="Primer Nombre"
+                placeholder="Primer Nombre">
+        </div>
+        <div class="col-3">
+            <input type="text" data-role="materialinput"
+                data-label="Segundo Nombre"
+                placeholder="Segundo Nombre">
+        </div>
+        <div class="col-3">
+            <input type="text" data-role="materialinput"
+                data-label="Primer Apellido"
+                placeholder="Primer Apellido">
+        </div>
+        <div class="col-3">
+            <input type="text" data-role="materialinput"
+                data-label="Segundo Apellido"
+                placeholder="Segundo Apellido">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6">
+            <input type="text" data-role="materialinput"
+                data-label="Teléfono Celular"
+                placeholder="Teléfono Celular">
+        </div>
+        <div class="col-6">
+            <input type="text" data-role="materialinput"
+                data-label="Teléfono Domicilio"
+                placeholder="Teléfono Domicilio">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+            <input type="email" data-role="materialinput"
+                data-label="Correo Electrónico"
+                placeholder="Correo Electrónico">
+        </div>
+      </div>
     </div>
     <div class="modal-footer">
-
+        <button type="button" class="btn btn-outline-danger" (click)="c('cancel')">Cancelar</button>
+        <button type="button" class="btn btn-success" (click)="c('Ok click')">Aceptar</button>
     </div>
 </ng-template>
