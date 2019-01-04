@@ -1,2 +1,18 @@
-<div>{{ fecha }}</div>
-<div><button (click)="obtenerFecha()">Refrescar</button></div>
+<div>
+  <input type="number" [(ngModel)]="a" />
+  <input type="number" [(ngModel)]="b" />
+</div>
+<div>
+  <button (click)="suma()">+</button> <button (click)="resta()">-</button>
+  <button (click)="multiplica()">*</button>
+  <button (click)="divide()">/</button>
+</div>
+<div><input type="number" [(ngModel)]="respuesta" /></div>
+
+<div>
+  <button (click)="saludaPost()">Post</button>
+  <button (click)="saludaDelete()">Delete</button>
+  <button (click)="saludaPut()">Put</button>
+  <button (click)="saludaGet()">Get</button>
+</div>
+<div><input type="text" [(ngModel)]="saludo" /></div>

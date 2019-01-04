@@ -1,3 +1,4 @@
+import { FormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { HttpModule } from "@angular/http";
@@ -5,7 +6,7 @@ import { AppComponent } from "./app.component";
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, HttpModule],
+  imports: [BrowserModule, HttpModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent]
 })
